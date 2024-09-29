@@ -45,7 +45,7 @@ def render_card_response(request, name):
         'border_color': border_color,
         'background_color': background_color,
     }
-
+    
     if request.content_type == 'application/json':
         # Render to string for JSON response
         formatted_html = render_to_string('api/card.html', context)
