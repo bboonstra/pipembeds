@@ -4,19 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Overview</title>
+    <title>PipEmbeds Overview</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'api/index.css' %}">
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the PyPI Package Viewer</h1>
-        <p>This project allows you to easily view information about Python packages hosted on PyPI.</p>
-        <p>You can access package information via our API:</p>
+        <h1>Welcome to the PyPI Package Embedding API</h1>
+        <p>This project allows you to easily embed or get information about Python packages hosted on PyPI.</p>
+        <p>You can display package information via our third-party API:</p>
         <ul>
-            <li>JSON Format: <code>/api/embed/&lt;package_name&gt;/</code></li>
+            <li>JSON Format: <code>/json/&lt;package_name&gt;/</code></li>
             <li>HTML Format: <code>/html/&lt;package_name&gt;/</code></li>
         </ul>
+        
+        <p>/json/ returns a JSON object of the pip embed, with the format <code>{&#39;html&#39;: &quot;&quot;}</code>.</p>
+        <p>/html/ returns an HTML page of the pip embed.</p>
+        
         <p>To get started, simply replace <code>&lt;package_name&gt;</code> with the name of the package you want to view.</p>
     </div>
 </body>

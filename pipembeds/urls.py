@@ -15,11 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 # urls.py
-from django.urls import path
+from django.urls import path, re_path
 from api import views
 
 urlpatterns = [
     path('', views.index, name='index'),  # URL for the index page
     path('json/<str:name>/', views.get_json, name='get_json'),  # URL for JSON response
     path('html/<str:name>/', views.get_html, name='get_html'),  # URL for HTML card
+    re_path(r'^.*$', views.index),  # Wildcard pattern to catch any other path
 ]
+
