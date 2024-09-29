@@ -30,3 +30,16 @@ class PyPiPackageViewTests(TestCase):
         """
         response = self.client.get(reverse('get_json', args=['_']))
         self.assertIn(b'is not a valid PyPi package', response.content)  # Check content directly
+
+class CORSHeadersTest(TestCase):
+    def test_embedding_headers(self):
+        # Make a request to your API endpoint
+        response = self.client.get(reverse('get_json', args=['idlegame']))
+
+        # Check if the Content-Security-Policy header is present
+        self.assertIn('Content-Security-Policy', response.headers)
+
+        # Check if the CSP allows embedding from any origin
+        csp_header = response.headers['Content-Security-Policy']
+        self.assertIn('frame-ancestors', csp_header)
+        self.assertIn('*', csp_header)  # Ensure '*' is present for all origins
