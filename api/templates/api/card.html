@@ -1,0 +1,37 @@
+<!-- card.html -->
+<div class="card" style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 16px 0; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; transition: box-shadow 0.3s;">
+    <style>
+        .card h1 {
+            font-size: 1.5em; 
+            margin-bottom: 8px; 
+        }
+
+        .card h2 {
+            font-size: 1.2em; 
+            margin-bottom: 12px; 
+        }
+
+        .card p {
+            margin: 8px 0; 
+        }
+
+        .card .btn {
+            display: inline-block; 
+            padding: 10px 15px; 
+            color: #fff; 
+            background-color: #007bff; 
+            border-radius: 4px; 
+            text-decoration: none; 
+            transition: background-color 0.3s; 
+        }
+
+        .card .btn:hover {
+            background-color: #0056b3; 
+        }
+    </style>
+    <h1>{{ info.name }}</h1>
+    <h2>Version: {{ info.version }}</h2>
+    <p>{{ info.summary }}</p>
+    <p><strong>Author:</strong> {{ info.author }}</p>
+    <a href="{{ info.release_url }}" class="btn">View Release</a>
+</div>

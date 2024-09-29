@@ -1,0 +1,23 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Overview</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'api/index.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the PyPI Package Viewer</h1>
+        <p>This project allows you to easily view information about Python packages hosted on PyPI.</p>
+        <p>You can access package information via our API:</p>
+        <ul>
+            <li>JSON Format: <code>/api/embed/&lt;package_name&gt;/</code></li>
+            <li>HTML Format: <code>/html/&lt;package_name&gt;/</code></li>
+        </ul>
+        <p>To get started, simply replace <code>&lt;package_name&gt;</code> with the name of the package you want to view.</p>
+    </div>
+</body>
+</html>

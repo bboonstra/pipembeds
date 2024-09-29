@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+      {
+          "label": "Build Project",
+          "type": "shell",
+          "command": "./build.sh",
+          "group": {
+              "kind": "build",
+              "isDefault": true
+          },
+          "problemMatcher": [],
+          "detail": "Run the build script to install dependencies, migrate database, and collect static files"
+      },
+      {
+          "label": "Run Django Server",
+          "type": "shell",
+          "command": "python3 manage.py runserver",
+          "dependsOn": "Build Project",
+          "group": {
+              "kind": "build",
+              "isDefault": false
+          },
+          "problemMatcher": [],
+          "detail": "Run the Django development server"
+      },
+      {
+          "label": "Migrate Django DB",
+          "type": "shell",
+          "command": "python3 manage.py migrate",
+          "group": {
+              "kind": "build",
+              "isDefault": false
+          },
+          "problemMatcher": [],
+          "detail": "Run the Django migration"
+      },
+      {
+          "label": "Run Tests",
+          "type": "shell",
+          "command": "python3 manage.py test",
+          "group": "none",
+          "problemMatcher": [],
+          "detail": "Run Django tests"
+      }
+  ]
+}
