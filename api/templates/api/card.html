@@ -1,6 +1,14 @@
 <!-- card.html -->
-<div class="card" style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 16px 0; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color: #fff; transition: box-shadow 0.3s;">
+<div class="card" style="border: 1px solid {{ border_color }}; background-color: {{ background_color }}; color: {{ text_color }};">
     <style>
+        .card {
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
         .card h1 {
             font-size: 1.5em; 
             margin-bottom: 8px; 
@@ -19,14 +27,14 @@
             display: inline-block; 
             padding: 10px 15px; 
             color: #fff; 
-            background-color: #007bff; 
+            background-color: {{ button_color }}; 
             border-radius: 4px; 
             text-decoration: none; 
             transition: background-color 0.3s; 
         }
 
         .card .btn:hover {
-            background-color: #0056b3; 
+            background-color: {{ button_color|darken:10 }}; 
         }
     </style>
     <h1>{{ info.name }}</h1>

@@ -14,13 +14,23 @@
         <p>This project allows you to easily embed or get information about Python packages hosted on PyPI.</p>
         <p>You can display package information via our third-party API:</p>
         <ul>
-            <li>JSON Format: <code>/json/&lt;package_name&gt;/</code></li>
-            <li>HTML Format: <code>/html/&lt;package_name&gt;/</code></li>
+            <li>JSON Format: <code>/json/&lt;package_name&gt;/?theme=dark&text_color=#fff&button_color=#007bff&border_color=#ddd&background_color=#333</code></li>
+            <li>HTML Format: <code>/html/&lt;package_name&gt;/?theme=dark&text_color=#fff&button_color=#007bff&border_color=#ddd&background_color=#333</code></li>
         </ul>
         
         <p>/json/ returns a JSON object of the pip embed, with the format <code>{&#39;html&#39;: &quot;&quot;}</code>.</p>
         <p>/html/ returns an HTML page of the pip embed.</p>
         
+        <h3>Customization Options</h3>
+        <p>Embeds are incredibly customizable:</p>
+        <ul>
+            <li><strong>theme</strong>: Set to <code>dark</code> or <code>light</code> for different color schemes.</li>
+            <li><strong>text_color</strong>: Hex color for text (e.g., <code>#fff</code> for white).</li>
+            <li><strong>button_color</strong>: Hex color for buttons (e.g., <code>#007bff</code> for blue).</li>
+            <li><strong>border_color</strong>: Hex color for the card border (e.g., <code>#ddd</code> for light gray).</li>
+            <li><strong>background_color</strong>: Hex color for the card background (e.g., <code>#fff</code> for white).</li>
+        </ul>
+
         <p>To get started, simply replace <code>&lt;package_name&gt;</code> with the name of the package you want to view.</p>
     </div>
 </body>
