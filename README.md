@@ -1,3 +1,4 @@
+[![Django Tests](https://github.com/bboonstra/pipembeds/actions/workflows/django-tests.yml/badge.svg)](https://github.com/bboonstra/pipembeds/actions/workflows/django-tests.yml)
 # PipEmbeds
 
 PipEmbeds is a project that allows you to easily embed or get information about Python packages hosted on PyPI. Whether you're looking to display package details on your website or retrieve information programmatically, this API has you covered.
