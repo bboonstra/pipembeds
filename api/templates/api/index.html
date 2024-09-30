@@ -14,12 +14,12 @@
         <p>This project allows you to easily embed or get information about Python packages hosted on PyPI.</p>
         <p>You can display package information via our third-party API:</p>
         <ul>
-            <li>JSON Format: <code>/json/&lt;package_name&gt;/?theme=dark&...</code></li>
-            <li>HTML Format: <code>/html/&lt;package_name&gt;/?theme=dark&...</code></li>
+            <li>JSON Format: <code>{% url 'get_json' 'package_name' %}</code></li>
+            <li>HTML Format: <code>{% url 'get_html' 'package_name' %}</code></li>
         </ul>
         
-        <p>/json/ returns a JSON object of the pip embed, with the format <code>{&#39;html&#39;: &quot;&quot;}</code>.</p>
-        <p>/html/ returns an HTML page of the pip embed. Use it in an iframe element!</p>
+        <p>The JSON endpoint returns a JSON object of the pip embed, with the format <code>{&#39;html&#39;: &quot;&quot;}</code>.</p>
+        <p>The HTML endpoint returns an HTML page of the pip embed. Use it in an iframe element!</p>
         
         <h3>Customization Options</h3>
         <p>Embeds are incredibly customizable:</p>
@@ -32,6 +32,8 @@
         </ul>
 
         <p>To get started, simply replace <code>&lt;package_name&gt;</code> with the name of the package you want to view.</p>
+        <p>Example URL for JSON: <code>{{ request.scheme }}://{{ request.get_host }}{% url 'get_json' 'example_package' %}</code></p>
+        <p>Example URL for HTML: <code>{{ request.scheme }}://{{ request.get_host }}{% url 'get_html' 'example_package' %}</code></p>
     </div>
 </body>
 </html>
