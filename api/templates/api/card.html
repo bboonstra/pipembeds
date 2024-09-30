@@ -1,12 +1,28 @@
 <!-- card.html -->
 <div class="card" style="border: 1px solid {{ border_color }}; background-color: {{ background_color }}; color: {{ text_color }};">
     <style>
+        /* Reset default styles to ensure centering works correctly */
+        html, body, iframe {
+            height: 100%; /* Make sure they fill the height of the parent */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .card {
             border-radius: 8px;
             padding: 16px;
-            margin: 16px 0;
+            margin: 16px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s;
+            width: auto; /* Allow the card to fit content */
+            max-width: 90%; /* Prevent it from being too wide */
+            height: auto; /* Allow height to fit content */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
         }
 
         .card h1 {
