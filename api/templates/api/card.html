@@ -18,35 +18,43 @@
 
         .card {
             border-radius: 8px;
-            padding: 16px;
+            padding: 0px 16px 0px 16px;
             margin: 0; /* Remove margin to fill parent */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
             transition: box-shadow 0.3s;
             width: 100%; /* Fill parent width */
             height: auto; /* Allow height to adjust based on content */
             max-width: 400px; /* Set a max width for better scaling */
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center content horizontally */
-            color: {% if theme == 'dark' %}white{% else %}black{% endif %};
-            background-color: {% if theme == 'dark' %}black{% else %}white{% endif %};            
+            position: relative; /* Position relative for absolute child elements */
             box-sizing: border-box; /* Include padding and border in element's total width and height */
+            background-color: {% if theme == 'dark' %}#1e1e1e{% else %}#f0f4f8{% endif %}; /* New vibrant background colors */
         }
 
         .card h1 {
-            font-size: 1.5em; 
+            font-size: 2em; /* Increase size for prominence */
             margin-bottom: 8px; 
             text-align: center; /* Center the text */
+            color: {% if theme == 'dark' %}#ffd700{% else %}#007bff{% endif %}; /* Gold for dark, blue for light */
         }
 
-        .card h2 {
-            font-size: 1.2em; 
-            margin-bottom: 12px; 
-            text-align: center; /* Center the text */
-        }
-
-        .card p {
+        .card .info {
+            font-size: 1.1em; 
             margin: 8px 0; 
+            text-align: center; /* Center the text */
+            color: {% if theme == 'dark' %}#ddd{% else %}#555{% endif %}; /* Softer color for visibility */
+        }
+
+        .card .summary {
+            text-align: center; /* Center the text */
+            margin: 12px 0; /* Space around summary */
+            color: {% if theme == 'dark' %}#ccc{% else %}#333{% endif %}; /* Lighter summary text */
+        }
+
+        .card .requirement {
+            font-size: 0.9em; 
+            color: {% if theme == 'dark' %}#aaa{% else %}#888{% endif %}; /* Gray color for requirements */
             text-align: center; /* Center the text */
         }
 
@@ -54,16 +62,18 @@
             display: inline-block; 
             padding: 10px 15px; 
             color: #fff; 
-            background-color: {{ button_color }}; 
+            background-color: {{ button_color }};
             border-radius: 4px; 
             text-decoration: none; 
             transition: background-color 0.3s; 
             text-align: center; /* Center the button */
+            margin-top: 10px; /* Space above button */
+            align-self: center; /* Center button in the card */
         }
     </style>
     <h1>{{ info.name }}</h1>
-    <h2>Version: {{ info.version }}</h2>
-    <p>{{ info.summary }}</p>
-    <p><strong>Author:</strong> {{ info.author }}</p>
+    <p class="info">{{ info.version }} • {{ info.author }}</p> <!-- Combined version and author -->
+    <p class="summary">{{ info.summary }}</p>
     <a href="{{ info.release_url }}" target="_blank" class="btn">View Release</a>
+    <p class="requirement">requires python: {{ info.requires_python }}</p> <!-- Updated requirement text -->
 </div>

@@ -15,6 +15,7 @@ def fetch_package_info(name):
         "summary": f"The package '{name}' is not a valid PyPi package.",
         "author": "sorry!",
         "release_url": reverse('index'),
+        "requires_python": "???",
     }
 
     url = f'https://pypi.org/pypi/{name}/json'
