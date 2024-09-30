@@ -8,7 +8,6 @@
 # Icon must end with two \r
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -23,10 +22,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-
 ### Python ###
 # Byte-compiled / optimized / DLL files
-__pycache__/
+**/__pycache__/
 *.py[cod]
 
 # C extensions
@@ -77,12 +75,11 @@ docs/_build/
 # PyBuilder
 target/
 
-
 ### Django ###
 *.log
 *.pot
 *.pyc
-__pycache__/
+**/__pycache__/
 local_settings.py
 
 .env
