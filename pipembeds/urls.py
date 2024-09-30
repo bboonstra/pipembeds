@@ -20,9 +20,10 @@ from api import views
 
 urlpatterns = [
     path('', views.index, name='index'),  # URL for the index page
-    re_path(r'^json/(?P<name>[^/]+)/?$', views.get_json, name='get_json'),  # JSON response, with or without trailing slash
-    re_path(r'^html/(?P<name>[^/]+)/?$', views.get_html, name='get_html'),  # HTML card, with or without trailing slash
+    re_path(r'^json/(?P<name>[^/]+)/?(\?.*)?$', views.get_json, name='get_json'),
+    re_path(r'^html/(?P<name>[^/]+)/?(\?.*)?$', views.get_html, name='get_html'),
     re_path(r'^.*$', views.index),  # Wildcard pattern to catch any other path
 ]
+
 
 
