@@ -49,10 +49,6 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
     "Authorization",
 ]
 
-# Allow embedding
-X_FRAME_OPTIONS = 'ALLOW-FROM https://your-allowed-domain.com'  # Update with your domains
-
-
 # Application definition
 
 INSTALLED_APPS = [
