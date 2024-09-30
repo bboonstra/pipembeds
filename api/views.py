@@ -30,7 +30,7 @@ def render_card_response(request, name):
     Fetches package information and returns rendered HTML based on the request type.
     """
     package_info = fetch_package_info(name)
-    theme = request.GET.get('theme', 'light')  # Default theme to 'light'
+    theme = request.GET.get('theme', 'dark')  # Default theme to dark
     text_color = request.GET.get('text_color', '#000')  # Default text color
     button_color = request.GET.get('button_color', '#007bff')  # Default button color
     border_color = request.GET.get('border_color', '#ddd')  # Default border color
@@ -45,7 +45,7 @@ def render_card_response(request, name):
         'border_color': border_color,
         'background_color': background_color,
     }
-    
+
     if request.content_type == 'application/json':
         # Render to string for JSON response
         formatted_html = render_to_string('api/card.html', context)
