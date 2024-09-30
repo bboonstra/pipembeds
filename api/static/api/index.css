@@ -1,0 +1,82 @@
+/* Global Styles */
+body {
+    font-family: 'CarvingSoft', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background */
+    color: #fff; /* White text */
+    text-align: center;
+}
+
+/* Container Styles */
+.container {
+    max-width: 90%; /* Maximum width of the content */
+    margin: 20px auto; /* Centering the container */
+    padding: 20px;
+    background-color: #1E1E1E; /* Slightly lighter dark background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2em; /* Larger font size for main title */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #db8b00; /* Gold color for the main heading */
+}
+
+h3 {
+    margin-top: 20px; /* Space above subheadings */
+    margin-bottom: 10px; /* Space below subheadings */
+    font-size: 1.8em; /* Slightly larger for emphasis */
+    color: #af1d00; /* Red color for subheadings */
+}
+
+/* Paragraph Styles */
+p {
+    line-height: 1.6; /* Improved line height for readability */
+    margin-bottom: 15px; /* Space below paragraphs */
+}
+
+/* List Styles */
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0; /* Remove default padding */
+}
+
+li {
+    margin-bottom: 10px; /* Space below each list item */
+}
+
+/* Code Styles */
+code {
+    background-color: rgba(255, 255, 255, 0.1); /* Light background for code snippets */
+    color: #00FFCC; /* Aqua color for code text */
+    padding: 2px 4px; /* Padding for code elements */
+    border-radius: 4px; /* Rounded corners for code */
+}
+
+/* Links Styles */
+a {
+    color: #00FFCC; /* Aqua color for links */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover for links */
+}
+
+/* Button Styles (if applicable) */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #007bff; /* Blue button color */
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
