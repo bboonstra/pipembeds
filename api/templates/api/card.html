@@ -1,4 +1,3 @@
-<!-- card.html -->
 <div class="card" style="border: 1px solid {{ border_color }}; background-color: {{ background_color }}; color: {{ text_color }};">
     <style>
         /* Reset default styles to ensure centering works correctly */
@@ -9,6 +8,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: transparent;
         }
 
         .card {
@@ -23,6 +23,8 @@
             display: flex;
             flex-direction: column;
             align-items: center; /* Center content horizontally */
+            color: {% if theme == 'dark' %}white{% else %}black{% endif %};
+            background-color: {% if theme == 'dark' %}black{% else %}white{% endif %};            
         }
 
         .card h1 {

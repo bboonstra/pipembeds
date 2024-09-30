@@ -31,10 +31,18 @@ def render_card_response(request, name):
     """
     package_info = fetch_package_info(name)
     theme = request.GET.get('theme', 'dark')  # Default theme to dark
-    text_color = request.GET.get('text_color', '#000')  # Default text color
-    button_color = request.GET.get('button_color', '#007bff')  # Default button color
-    border_color = request.GET.get('border_color', '#ddd')  # Default border color
-    background_color = request.GET.get('background_color', '#fff')  # Default background color
+
+    text_color = request.GET.get('text_color', '#fff')  # Default text color for dark theme
+    button_color = request.GET.get('button_color', '#007bff')  # Default button color for dark theme
+    border_color = request.GET.get('border_color', '#555')  # Default border color for dark theme
+    background_color = request.GET.get('background_color', '#000')  # Default background color for dark theme
+
+    if theme == 'light':
+        text_color = request.GET.get('text_color', '#000')  # Default text color for light theme
+        button_color = request.GET.get('button_color', '#007bff')  # Default button color for light theme
+        border_color = request.GET.get('border_color', '#ddd')  # Default border color for light theme
+        background_color = request.GET.get('background_color', '#fff')  # Default background color for light theme
+
 
     # Prepare the context for rendering
     context = {
