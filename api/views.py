@@ -26,7 +26,7 @@ def fetch_package_info(name):
     except requests.exceptions.RequestException:
         return default_data
 
-def render_card_response(request, name):
+def render_card_response(request, name, data_type):
     """
     Fetches package information and returns rendered HTML based on the request type.
     """
@@ -55,7 +55,7 @@ def render_card_response(request, name):
         'background_color': background_color,
     }
 
-    if request.content_type == 'application/json':
+    if data_type.lower() == 'json':
         # Render to string for JSON response
         formatted_html = render_to_string('api/card.html', context)
         return JsonResponse({'html': formatted_html}, status=200 if package_info['name'] != "Package Not Found" else 404)
@@ -74,10 +74,10 @@ def get_json(request, name):
     """
     Handles requests for JSON responses.
     """
-    return render_card_response(request, name)
+    return render_card_response(request, name, "json")
 
 def get_html(request, name):
     """
     Handles requests for HTML responses.
     """
-    return render_card_response(request, name)
+    return render_card_response(request, name, "html")
